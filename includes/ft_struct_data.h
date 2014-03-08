@@ -6,7 +6,7 @@
 /*   By: geam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 13:22:52 by geam              #+#    #+#             */
-/*   Updated: 2014/03/08 13:32:25 by geam             ###   ########.fr       */
+/*   Updated: 2014/03/08 16:10:40 by mdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ typedef struct	s_data
 {
 	char	**board;
 	int		width;
-	int		hieght;
+	int		height;
 	int		x;
 	int		y;
+	int		depp;
 }				t_data;
 
 #endif /* FT_STRUCT_DATA_H */
