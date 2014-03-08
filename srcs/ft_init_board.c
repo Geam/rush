@@ -6,11 +6,12 @@
 /*   By: mdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 12:07:31 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/08 12:25:04 by mdelage          ###   ########.fr       */
+/*   Updated: 2014/03/08 13:34:24 by geam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_struct_data.h"
 
 static int	ft_init_board_sub(char **board, int x, int y)
 {
@@ -39,25 +40,24 @@ static int	ft_init_board_sub(char **board, int x, int y)
 	return (0);
 }
 
-char		**ft_init_board(char **av)
+char		**ft_init_board(t_data *data, char **av)
 {
 	int		x;
-	int		y;
 	int		ret;
 	char	**board;
 
 	board = NULL;
-	x = ft_atoi(av[1]);
-	y = ft_atoi(av[2]);
-	if (x >= 7 && y >= 6)
+	data->x = ft_atoi(av[1]);
+	data->y = ft_atoi(av[2]);
+	if (data->x >= 7 && data->y >= 6)
 	{
-		board = (char **)malloc(sizeof(char *) * (x + 1));
+		board = (char **)malloc(sizeof(char *) * (data->x + 1));
 		if (board)
 		{
-			if ((ret = ft_init_board_sub(board, x, y)))
+			if ((ret = ft_init_board_sub(board, data->x, data->y)))
 			{
 				x = 0;
-				while (x < i)
+				while (x < ret)
 				{
 					free(board[x]);
 					x++;

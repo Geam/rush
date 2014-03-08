@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mdelage <>                                 +#+  +:+       +#+         #
+#    By: geam <>                                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2014/03/08 12:35:32 PM by mdelage        #+#    #+#              #
-#    Updated: 2014/03/08 12:35:32 PM by mdelage       ###   ########.fr        #
+#    Created: 2014/03/08 13:34:39 by geam              #+#    #+#              #
+#    Updated: 2014/03/08 13:34:39 by geam             ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -35,13 +35,17 @@ all: $(OPATH) $(LIB) $(NAME)
 
 $(NAME): $(OFILES)
 	@echo "Building $(NAME)"
-	@$(CC) $(LDFLAGS) $^ -o $@
+	@$(CC) $^ -o $@ $(LDFLAGS)
 
-$(OPATH)/	@echo "Creating file $@"
-	@$(CC) $(CFLAGS) -c $< -o $@
+$(OPATH)/ft_init_board.o: srcs/ft_init_board.c libft/includes/libft.h \
+ includes/ft_struct_data.h
+	@echo "Creating file $@"
+	@$(CC) -c $< -o $@ $(CFLAGS)
 
-$(OPATH)/	@echo "Creating file $@"
-	@$(CC) $(CFLAGS) -c $< -o $@
+$(OPATH)/main.o: srcs/main.c libft/includes/libft.h includes/ft_struct_data.h \
+ includes/ft_init_board.h
+	@echo "Creating file $@"
+	@$(CC) -c $< -o $@ $(CFLAGS)
 
 clean:
 	@echo "Deletion of building files"

@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_board.h                                    :+:      :+:    :+:   */
+/*   ft_struct_data.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdelage <>                                 +#+  +:+       +#+        */
+/*   By: geam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/08 12:33:17 PM by mdelage        #+#    #+#             */
-/*   Updated: 2014/03/08 13:33:31 by geam             ###   ########.fr       */
+/*   Created: 2014/03/08 13:22:52 by geam              #+#    #+#             */
+/*   Updated: 2014/03/08 13:32:25 by geam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_INIT_BOARD_H
-# define FT_INIT_BOARD_H
+#ifndef FT_STRUCT_DATA_H
+# define FT_STRUCT_DATA_H
 
-char		**ft_init_board(t_data *data, char **av);
+typedef struct	s_data
+{
+	char	**board;
+	int		width;
+	int		hieght;
+	int		x;
+	int		y;
+}				t_data;
 
-#endif /* !FT_INIT_BOARD_H */
+#endif /* FT_STRUCT_DATA_H */
