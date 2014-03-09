@@ -6,7 +6,7 @@
 /*   By: mdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 11:04:36 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/08 13:30:07 by geam             ###   ########.fr       */
+/*   Updated: 2014/03/09 15:55:05 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int		main(int ac, char **av)
 		data.board = ft_init_board(&data, av);
 		if (data.board != NULL)
 		{
+			ft_start(&data);
 			free(data.board);
 		}
 		else
