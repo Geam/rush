@@ -6,7 +6,7 @@
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 20:14:47 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 15:14:53 by mdelage          ###   ########.fr       */
+/*   Updated: 2014/03/09 15:42:10 by mdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ void	ft_IA(t_data *data)
 	int		tmp;
 	int		i;
 	int		ret;
-	int		where[2];
 
 	max = -10000;
 	i = 0;
@@ -96,13 +95,13 @@ void	ft_IA(t_data *data)
 			tmp = ft_min(data, fake, 1);
 			if (tmp > max)
 			{
-				where[0] = i;
-				where[1] = ret;
+				(data->last)[0] = i;
+				(data->last)[1] = ret;
 			}
 			(data->board)[i][ret] = 0;
 		}
 		i++;
 	}
-	(data->board)[where[0]][where[1]] = 2;
+	(data->board)[(data->last)[0]][(data->last)[1]] = 2;
 	return ;
 }
