@@ -6,7 +6,7 @@
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 20:14:47 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 19:18:57 by frale-co         ###   ########.fr       */
+/*   Updated: 2014/03/09 20:39:31 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ int		ft_min(t_data *data, int deep)
 
 void	ft_ia(t_data *data)
 {
-	/* joue le meilleur coup pour l'IA */
 	int		max;
 	int		tmp;
 	int		i;
@@ -96,6 +95,7 @@ void	ft_ia(t_data *data)
 			tmp = ft_min(data, 1);
 			if (tmp > max)
 			{
+				max = tmp;
 				(data->last)[0] = i;
 				(data->last)[1] = ret;
 			}

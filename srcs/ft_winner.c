@@ -6,7 +6,7 @@
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/09 15:56:23 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 18:51:02 by frale-co         ###   ########.fr       */
+/*   Updated: 2014/03/09 20:32:36 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,12 @@ int		ft_how_many_piece(t_data *data)
 		{
 			if ((data->board)[i][j])
 				nb_piece++;
+			j++;
 		}
+		i++;
 	}
 	return (nb_piece);
 }
-
-/* evalue l'etat du plateau de jeu */
-/* 0 = jeu non fini */
-/* 1 = joueur checke gagne */
-/* 2 = match nul */
 
 int		ft_winner(t_data *data, int player)
 {

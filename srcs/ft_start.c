@@ -6,7 +6,7 @@
 /*   By: frale-co <frale-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 14:41:55 by frale-co          #+#    #+#             */
-/*   Updated: 2014/03/09 18:18:47 by frale-co         ###   ########.fr       */
+/*   Updated: 2014/03/09 19:31:28 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static void	ft_playerturn(t_data *data)
 			return ;
 		}
 		ft_ia(data);
+		ft_aff(data);
 		if ((ret = ft_winner(data, 2)) == 1)
 		{
 			ft_putendl("You lose !");
