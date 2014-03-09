@@ -6,7 +6,7 @@
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 20:17:42 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/08 22:42:57 by mdelage          ###   ########.fr       */
+/*   Updated: 2014/03/09 15:43:58 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,14 @@ int		ft_winner(t_data *data)
 	/* 1 = joueur 1 gagne */
 	/* 2 = joueur 2 gagne */
 	/* 3 = match nul */
-	if (/* joueur 1 a 4 pion alignes */)
+
+	if ()
 		return (1);
-	else if (/* joueur 2 a 4 pion alignes */)
+	else if ()
 		return (2);
 	else
 	{
-		if (/* partie finie */)
+		if ()
 			return (3);
 		else
 			return (0);
