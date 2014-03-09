@@ -6,7 +6,7 @@
 #    By: frale-co <frale-co@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/03/09 18:52:53 by frale-co          #+#    #+#              #
-#    Updated: 2014/03/09 18:52:53 by frale-co         ###   ########.fr        #
+#    Updated: 2014/03/09 21:31:15 by mdelage          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -38,6 +38,8 @@ SRC = ft_aff.c \
 HFILES = $(patsubst %,$(HPATH)/%, $(HEADER))
 CFILES = $(patsubst %,$(CPATH)/%, $(SRC))
 OFILES = $(patsubst %.c,$(OPATH)/%.o, $(SRC))
+
+.PHONY: all clean fclean re lib lib.clean lib.fclean lib.re
 
 all: $(OPATH) $(LIB) $(NAME)
 

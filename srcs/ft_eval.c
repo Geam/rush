@@ -6,13 +6,13 @@
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/09 15:55:41 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 21:23:59 by mdelage          ###   ########.fr       */
+/*   Updated: 2014/03/09 21:30:15 by mdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "puissance4.h"
 
-int		ft_how_many_raw(t_data *data, int coor[2], t_row *row, int len)
+int				ft_how_many_raw(t_data *data, int coor[2], t_row *row, int len)
 {
 	if ((data->board)[coor[0]][coor[1]] == row->player + 1)
 	{
@@ -49,7 +49,7 @@ static t_row	*row_init(int player, int len)
 	return (row);
 }
 
-static int	ft_vect(t_data *data, t_row *row)
+static int		ft_vect(t_data *data, t_row *row)
 {
 	int		temp[2];
 	int		ret;
@@ -76,7 +76,7 @@ static int	ft_vect(t_data *data, t_row *row)
 	return (ret);
 }
 
-int		ft_raw(t_data *data, int player, int len)
+int				ft_raw(t_data *data, int player, int len)
 {
 	t_row	*row;
 	int		ret;
@@ -97,7 +97,7 @@ int		ft_raw(t_data *data, int player, int len)
 	return (ret);
 }
 
-int		ft_eval(t_data *data)
+int				ft_eval(t_data *data)
 {
 	int		player;
 	int		raw[2];
