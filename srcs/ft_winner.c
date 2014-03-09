@@ -1,44 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ia.c                                            :+:      :+:    :+:   */
+/*   ft_winner.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/08 20:17:42 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 15:43:58 by frale-co         ###   ########.fr       */
+/*   Created: 2014/03/09 15:56:23 by mdelage           #+#    #+#             */
+/*   Updated: 2014/03/09 15:57:16 by mdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_raw(t_data *data, int raw[2])
-{
-	/* compter le nombre de ligne de 2 ou 3 pions de chaque joeur.*/
-	/* joueur1 -> raw[0]; joueur2 -> raw[1] */
-	raw[0] = 0;
-	raw[1] = 0;
-	return ;
-}
-
-int		ft_eval(t_data *data)
-{
-	/* determine le "poid" du plateau */
-	int		piece;
-	int		raw[2];
-
-	piece = ft_how_many_piece(); /* retourne nb piece sur plateau */
-	if (/* partie finie */)
-	{
-		if (/* IA gagne */)
-			return (1000 - piece);
-		else
-			return (-1000 + piece);
-	}
-	else
-	{
-		ft_raw(data, raw);
-		return (raw[0] - raw[1]);
-	}
-}
+#include "ft_struct_data.h"
 
 int		ft_winner(t_data *data)
 {
