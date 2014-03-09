@@ -6,7 +6,7 @@
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/09 15:55:41 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 17:39:11 by mdelage          ###   ########.fr       */
+/*   Updated: 2014/03/09 17:53:54 by mdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,36 +29,31 @@ int		ft_how_many_raw(t_data *data, int player, int coor[2], int dir[2], int len)
 	}
 }
 
-void	ft_raw(t_data *data, int raw[2])
+int		ft_raw(t_data *data, int player, int len)
 {
 	/* compter le nombre de ligne de 3 pions de chaque joeur.*/
 	/* joueur1 -> raw[0]; joueur2 -> raw[1] */
-	int		player;
 	int		coor[2];
 	int		dir[2];
+	int		ret;
 
-	player = 0;
-	while (player < 2)
+	ret = 0;
+	coor[0] = 0;
+	while (coor[0] < data->x)
 	{
-		raw[player] = 0;
-		coor[0] = 0;
-		while (coor[0] < data->x)
+		coor[1] = 0;
+		while (coor[1] < data->y)
 		{
-			coor[1] = 0;
-			while (coor[1] < data->y)
-			{
-				dir[0] = 1;
-				dir[1] = 0;
-				raw[player] += ft_how_many_raw(data, player + 1, coor, dir, 0);
-				dir[1] = 1;
-				raw[player] += ft_how_many_raw(data, player + 1, coor, dir, 0);
-				dir[0] = 0;
-				raw[player] += ft_how_many_raw(data, player + 1, coor, dir, 0);
-				(coor[1])++;
-			}
-			(coor[0])++;
+			dir[0] = 1;
+			dir[1] = 0;
+			ret += ft_how_many_raw(data, player + 1, coor, dir, len);
+			dir[1] = 1;
+			ret += ft_how_many_raw(data, player + 1, coor, dir, len);
+			dir[0] = 0;
+			ret += ft_how_many_raw(data, player + 1, coor, dir, len);
+			(coor[1])++;
 		}
-		player++;
+		(coor[0])++;
 	}
 	return ;
 }
@@ -66,8 +61,14 @@ void	ft_raw(t_data *data, int raw[2])
 int		ft_eval(t_data *data)
 {
 	/* determine le "poid" du plateau */
+	int		player;
 	int		raw[2];
 
-	ft_raw(data, raw);
+	player = 0;
+	while (player < 2)
+	{
+		raw[player] = ft_raw(data, player, 3);
+		player++;
+	}
 	return (raw[0] - raw[1]);
 }
