@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: frale-co <frale-co@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2014/03/09 16:19:35 by frale-co          #+#    #+#              #
-#    Updated: 2014/03/09 16:19:53 by frale-co         ###   ########.fr        #
+#    Created: 2014/03/09 18:52:53 by frale-co          #+#    #+#              #
+#    Updated: 2014/03/09 18:52:53 by frale-co         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -27,9 +27,12 @@ LIB = $(LIBPATH)/libft.a
 HEADER = puissance4.h
 
 SRC = ft_aff.c \
+	ft_eval.c \
 	ft_init_board.c \
+	ft_minmax.c \
 	ft_player.c \
 	ft_start.c \
+	ft_winner.c \
 	main.c
 
 HFILES = $(patsubst %,$(HPATH)/%, $(HEADER))

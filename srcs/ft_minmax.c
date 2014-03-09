@@ -6,12 +6,13 @@
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 20:14:47 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 15:42:10 by mdelage          ###   ########.fr       */
+/*   Updated: 2014/03/09 19:18:57 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_struct_data.h"
+#include "puissance4.h"
+
+int		ft_min(t_data *data, int deep);
 
 int		ft_depth(char *board_col)
 {
@@ -32,8 +33,8 @@ int		ft_max(t_data *data, int deep)
 	int		tmp;
 
 	max = -10000;
-	if (deep == data->deep)
-		return (ft_eval());
+	if (deep == DEEP)
+		return (ft_eval(data));
 	i = 0;
 	while (i < data->x)
 	{
@@ -59,8 +60,8 @@ int		ft_min(t_data *data, int deep)
 	int		tmp;
 
 	min = -10000;
-	if (deep == data->deep)
-		return (ft_eval());
+	if (deep == DEEP)
+		return (ft_eval(data));
 	i = 0;
 	while (i < data->x)
 	{
@@ -77,7 +78,7 @@ int		ft_min(t_data *data, int deep)
 	return (min);
 }
 
-void	ft_IA(t_data *data)
+void	ft_ia(t_data *data)
 {
 	/* joue le meilleur coup pour l'IA */
 	int		max;
@@ -89,10 +90,10 @@ void	ft_IA(t_data *data)
 	i = 0;
 	while (i < data->x)
 	{
-		if ((ret = ft_depth(fake[i])) >= 0)
+		if ((ret = ft_depth((data->board)[i])) >= 0)
 		{
 			(data->board)[i][ret] = 2;
-			tmp = ft_min(data, fake, 1);
+			tmp = ft_min(data, 1);
 			if (tmp > max)
 			{
 				(data->last)[0] = i;

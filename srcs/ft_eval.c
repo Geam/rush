@@ -6,15 +6,15 @@
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/09 15:55:41 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 17:53:54 by mdelage          ###   ########.fr       */
+/*   Updated: 2014/03/09 19:12:35 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_struct_data.h"
+#include "puissance4.h"
 
 int		ft_how_many_raw(t_data *data, int player, int coor[2], int dir[2], int len)
 {
-	if ((data->board)[coor[0]][coor[1]] = player)
+	if ((data->board)[coor[0]][coor[1]] == player)
 	{
 		if (len == 0)
 			return (1);
@@ -27,6 +27,7 @@ int		ft_how_many_raw(t_data *data, int player, int coor[2], int dir[2], int len)
 		else
 			return (0);
 	}
+	return (0);
 }
 
 int		ft_raw(t_data *data, int player, int len)
@@ -55,7 +56,7 @@ int		ft_raw(t_data *data, int player, int len)
 		}
 		(coor[0])++;
 	}
-	return ;
+	return (ret);
 }
 
 int		ft_eval(t_data *data)

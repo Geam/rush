@@ -6,11 +6,11 @@
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/09 15:56:23 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 18:02:24 by mdelage          ###   ########.fr       */
+/*   Updated: 2014/03/09 18:51:02 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_struct_data.h"
+#include "puissance4.h"
 
 int		ft_how_many_piece(t_data *data)
 {
