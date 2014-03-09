@@ -6,13 +6,11 @@
 /*   By: mdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 11:04:36 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 15:55:05 by frale-co         ###   ########.fr       */
+/*   Updated: 2014/03/09 16:59:05 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_struct_data.h"
-#include "ft_init_board.h"
+#include "puissance4.h"
 
 int		main(int ac, char **av)
 {

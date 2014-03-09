@@ -6,12 +6,11 @@
 /*   By: mdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 12:07:31 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/08 13:34:24 by geam             ###   ########.fr       */
+/*   Updated: 2014/03/09 16:58:40 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_struct_data.h"
+#include "puissance4.h"
 
 static int	ft_init_board_sub(char **board, int x, int y)
 {

@@ -6,12 +6,32 @@
 /*   By: frale-co <frale-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 15:41:10 by frale-co          #+#    #+#             */
-/*   Updated: 2014/03/09 13:24:41 by frale-co         ###   ########.fr       */
+/*   Updated: 2014/03/09 17:55:26 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "al_cu.h"
-#include "ft_struct_data.h"
+#include "puissance4.h"
+
+void	ft_putfree(void)
+{
+	ft_putstr("\033[1;36m");
+	ft_putstr("⬚");
+	ft_putstr("\033[00m");
+}
+
+void	ft_putplayer(void)
+{
+	ft_putstr("\033[32;33m");
+	ft_putstr("◉");
+	ft_putstr("\033[00m");
+}
+
+void	ft_putia(void)
+{
+	ft_putstr("\033[1;31m");
+	ft_putstr("◉");
+	ft_putstr("\033[00m");
+}
 
 void	ft_aff(const t_data *data)
 {
@@ -26,14 +46,15 @@ void	ft_aff(const t_data *data)
 		while (i < data->x)
 		{
 			if (data->board[i][j] == 0)
-				ft_putchar('.');
+				ft_putfree();
 			if (data->board[i][j] == 1)
-				ft_putchar('O');
+				ft_putplayer();
 			if (data->board[i][j] == 2)
-				ft_putchar('X');
+				ft_putia();
+			ft_putchar(' ');
 			i++;
 		}
-		y++;
+		j++;
 		ft_putchar('\n');
 	}
 	ft_putchar('\n');

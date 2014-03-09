@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: geam <>                                    +#+  +:+       +#+         #
+#    By: frale-co <frale-co@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2014/03/08 13:34:39 by geam              #+#    #+#              #
-#    Updated: 2014/03/08 13:34:39 by geam             ###   ########.fr        #
+#    Created: 2014/03/09 16:19:35 by frale-co          #+#    #+#              #
+#    Updated: 2014/03/09 16:19:53 by frale-co         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -24,7 +24,12 @@ LDFLAGS = -L $(LIBPATH) -lft
 NAME = puissance4
 LIB = $(LIBPATH)/libft.a
 
-SRC = ft_init_board.c \
+HEADER = puissance4.h
+
+SRC = ft_aff.c \
+	ft_init_board.c \
+	ft_player.c \
+	ft_start.c \
 	main.c
 
 HFILES = $(patsubst %,$(HPATH)/%, $(HEADER))
@@ -35,17 +40,11 @@ all: $(OPATH) $(LIB) $(NAME)
 
 $(NAME): $(OFILES)
 	@echo "Building $(NAME)"
-	@$(CC) $^ -o $@ $(LDFLAGS)
+	@$(CC) $(LDFLAGS) $^ -o $@
 
-$(OPATH)/ft_init_board.o: srcs/ft_init_board.c libft/includes/libft.h \
- includes/ft_struct_data.h
+$(OPATH)/%.o: $(CPATH)/%.c $(HFILES)
 	@echo "Creating file $@"
-	@$(CC) -c $< -o $@ $(CFLAGS)
-
-$(OPATH)/main.o: srcs/main.c libft/includes/libft.h includes/ft_struct_data.h \
- includes/ft_init_board.h
-	@echo "Creating file $@"
-	@$(CC) -c $< -o $@ $(CFLAGS)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@echo "Deletion of building files"

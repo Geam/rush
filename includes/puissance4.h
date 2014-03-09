@@ -1,17 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_struct_data.h                                   :+:      :+:    :+:   */
+/*   puissance4.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geam <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: frale-co <frale-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/08 13:22:52 by geam              #+#    #+#             */
-/*   Updated: 2014/03/09 15:35:50 by frale-co         ###   ########.fr       */
+/*   Created: 2014/03/09 16:07:44 by frale-co          #+#    #+#             */
+/*   Updated: 2014/03/09 16:54:16 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STRUCT_DATA_H
-# define FT_STRUCT_DATA_H
+#ifndef PUISSANCE4_H
+# define PUISSANCE4_H
+
+# include <time.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include "libft.h"
+#include <stdio.h>
 
 typedef struct	s_data
 {
@@ -24,4 +32,9 @@ typedef struct	s_data
 	int		last[2];
 }				t_data;
 
-#endif /* FT_STRUCT_DATA_H */
+char		**ft_init_board(t_data *data, char **av);
+void		ft_aff(const t_data *data);
+void		ft_start(t_data *data);
+void		ft_player(t_data *data);
+
+#endif
