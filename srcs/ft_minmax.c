@@ -6,7 +6,7 @@
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 20:14:47 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 20:39:31 by frale-co         ###   ########.fr       */
+/*   Updated: 2014/03/09 21:19:42 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int		ft_min(t_data *data, int deep)
 	int		min;
 	int		tmp;
 
-	min = -10000;
+	min = 10000;
 	if (deep == DEEP)
 		return (ft_eval(data));
 	i = 0;
@@ -69,7 +69,7 @@ int		ft_min(t_data *data, int deep)
 		{
 			(data->board)[i][ret] = 1;
 			tmp = ft_max(data, deep + 1);
-			if (tmp > min)
+			if (tmp < min)
 				min = tmp;
 			(data->board)[i][ret] = 0;
 		}

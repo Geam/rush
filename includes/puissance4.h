@@ -6,7 +6,7 @@
 /*   By: frale-co <frale-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/09 16:07:44 by frale-co          #+#    #+#             */
-/*   Updated: 2014/03/09 20:38:53 by frale-co         ###   ########.fr       */
+/*   Updated: 2014/03/09 21:18:25 by frale-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUISSANCE4_H
 
 # define DEEP	4
-#include <stdio.h>
+
 # include <time.h>
 # include <unistd.h>
 # include <stdlib.h>
