@@ -6,7 +6,7 @@
 #    By: frale-co <frale-co@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/03/09 18:52:53 by frale-co          #+#    #+#              #
-#    Updated: 2014/03/09 21:31:15 by mdelage          ###   ########.fr        #
+#    Updated: 2014/03/09 22:47:22 by mdelage          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -45,11 +45,11 @@ all: $(OPATH) $(LIB) $(NAME)
 
 $(NAME): $(OFILES)
 	@echo "Building $(NAME)"
-	@$(CC) $(LDFLAGS) $^ -o $@
+	@$(CC) $^ -o $@ $(LDFLAGS)
 
 $(OPATH)/%.o: $(CPATH)/%.c $(HFILES)
 	@echo "Creating file $@"
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) -c $< -o $@ $(CFLAGS)
 
 clean:
 	@echo "Deletion of building files"
