@@ -6,47 +6,73 @@
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 20:14:47 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 01:16:38 by mdelage          ###   ########.fr       */
+/*   Updated: 2014/03/09 15:14:53 by mdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_struct_data.h"
 
-int		ft_max(t_data *data, char **fake, int deep)
+int		ft_depth(char *board_col)
+{
+	int		i;
+
+	i = 0;
+	while (board_col[i] == 0)
+		i++;
+	return (i - 1);
+}
+
+int		ft_max(t_data *data, int deep)
 {
 	/* test les coups pour l'IA */
+	int		i;
+	int		ret;
 	int		max;
 	int		tmp;
 
 	max = -10000;
 	if (deep == data->deep)
 		return (ft_eval());
-	while (/* cases a jouer */)
+	i = 0;
+	while (i < data->x)
 	{
-		/* MAJ faux plateau avec nouveau coup */
-		tmp = ft_min(data, fake, deep + 1);
-		if (tmp > max)
-			max = tmp;
+		if ((ret = ft_depth((data->board)[i])) >= 0)
+		{
+			(data->board)[i][ret] = 2;
+			tmp = ft_min(data, deep + 1);
+			if (tmp > max)
+				max = tmp;
+			(data->board)[i][ret] = 0;
+		}
+		i++;
 	}
 	return (max);
 }
 
-int		ft_min(t_data *data, char **fake, int deep)
+int		ft_min(t_data *data, int deep)
 {
 	/* test les coups pour le joueur */
+	int		i;
+	int		ret;
 	int		min;
 	int		tmp;
 
 	min = -10000;
 	if (deep == data->deep)
 		return (ft_eval());
-	while (/* cases a jouer */)
+	i = 0;
+	while (i < data->x)
 	{
-		/* MAJ faux plateau avec nouveau coup */
-		tmp = ft_min(data, fake, deep + 1);
-		if (tmp > min)
-			min = tmp;
+		if ((ret = ft_depth((data->board)[i])) >= 0)
+		{
+			(data->board)[i][ret] = 1;
+			tmp = ft_max(data, deep + 1);
+			if (tmp > min)
+				min = tmp;
+			(data->board)[i][ret] = 0;
+		}
+		i++;
 	}
 	return (min);
 }
@@ -56,18 +82,27 @@ void	ft_IA(t_data *data)
 	/* joue le meilleur coup pour l'IA */
 	int		max;
 	int		tmp;
+	int		i;
+	int		ret;
 	int		where[2];
-	char	**fake_board;
 
 	max = -10000;
-	fake_board = ft_dup_tab(data->board);
-	while (/* cases a joueur */)
+	i = 0;
+	while (i < data->x)
 	{
-		/* MAJ faux plateau */
-		tmp = ft_min(data, fake, 1);
-		if (tmp > max)
-			/* On doit recuperer la position, pas encore compris comment...*/
+		if ((ret = ft_depth(fake[i])) >= 0)
+		{
+			(data->board)[i][ret] = 2;
+			tmp = ft_min(data, fake, 1);
+			if (tmp > max)
+			{
+				where[0] = i;
+				where[1] = ret;
+			}
+			(data->board)[i][ret] = 0;
+		}
+		i++;
 	}
-	/* MAJ du vrai plateau avec la position recuperee */
-	ft_free_tab(&fake_board);
+	(data->board)[where[0]][where[1]] = 2;
+	return ;
 }
