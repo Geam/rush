@@ -6,7 +6,7 @@
 /*   By: frale-co <frale-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 19:03:05 by frale-co          #+#    #+#             */
-/*   Updated: 2014/03/09 18:09:07 by frale-co         ###   ########.fr       */
+/*   Updated: 2014/03/09 21:27:12 by mdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	ft_put_pplay(t_data *data, int play)
 		data->board[play][i] = 1;
 		return (1);
 	}
-	else 
+	else
 		return (0);
 }
 

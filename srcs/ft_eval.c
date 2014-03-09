@@ -6,7 +6,7 @@
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/09 15:55:41 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 21:18:13 by frale-co         ###   ########.fr       */
+/*   Updated: 2014/03/09 21:23:59 by mdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static t_row	*row_init(int player, int len)
 		row->coor[1] = 0;
 		row->dir[0] = 1;
 		row->dir[1] = 0;
-	} 
+	}
 	return (row);
 }
 

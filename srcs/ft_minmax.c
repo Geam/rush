@@ -6,7 +6,7 @@
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 20:14:47 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 21:19:42 by frale-co         ###   ########.fr       */
+/*   Updated: 2014/03/09 21:25:36 by mdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int		ft_depth(char *board_col)
 
 int		ft_max(t_data *data, int deep)
 {
-	/* test les coups pour l'IA */
 	int		i;
 	int		ret;
 	int		max;
@@ -53,7 +52,6 @@ int		ft_max(t_data *data, int deep)
 
 int		ft_min(t_data *data, int deep)
 {
-	/* test les coups pour le joueur */
 	int		i;
 	int		ret;
 	int		min;

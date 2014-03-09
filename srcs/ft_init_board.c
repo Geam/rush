@@ -6,7 +6,7 @@
 /*   By: mdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 12:07:31 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 16:58:40 by frale-co         ###   ########.fr       */
+/*   Updated: 2014/03/09 21:25:06 by mdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,9 @@ char		**ft_init_board(t_data *data, char **av)
 		{
 			if ((ret = ft_init_board_sub(board, data->x, data->y)))
 			{
-				x = 0;
-				while (x < ret)
-				{
+				x = -1;
+				while (++x < ret)
 					free(board[x]);
-					x++;
-				}
 				free(board);
 				board = NULL;
 			}
