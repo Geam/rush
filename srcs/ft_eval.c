@@ -6,7 +6,7 @@
 /*   By: mdelage <mdelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/09 15:55:41 by mdelage           #+#    #+#             */
-/*   Updated: 2014/03/09 23:32:13 by mdelage          ###   ########.fr       */
+/*   Updated: 2014/03/13 12:50:33 by mdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,8 @@ int				ft_eval(t_data *data)
 	while (player < 2)
 	{
 		raw[player] = ft_raw(data, player, 2);
-		raw[player] += 2 * ft_raw(data, player, 3);
-		raw[player] += 10 * ft_raw(data, player, 4);
+		raw[player] += 4 * ft_raw(data, player, 3);
+		raw[player] += 128 * ft_raw(data, player, 4);
 		player++;
 	}
 	return (raw[1] - (raw[0] * 2));
